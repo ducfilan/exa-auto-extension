@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Auto buy EXA coin</title>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.countdown.min.js"></script>
+    <script src="otpauth.min.js"></script>
+
+    <script src="time-facade.js"></script>
+    <script src="storage-facade.js"></script>
+    <script src="auth-facade.js"></script>
+    <script src="form-man.js"></script>
+
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="form-styles.css">
+    <link rel="stylesheet" href="popup-styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+      <div class="header">
+        <h3 class="header__title">Exa coin buy helper - © Duc Filan</h3>
+      </div>
+
+      <div class="secret-form">
+        <input type="text" class="secret-form__input-text" placeholder="2-FA secret code">
+        <button class="secret-form__button-set">SET</button>
+      </div>
+
+      <div class="info-form">
+        <h2 class="info-form__countdown info-form__countdown--no-margin"></h2>
+        <h2 class="info-form__2fa-code info-form__2fa-code--no-margin"></h2>
+      </div>
+
+      <div class="config-form">
+        <div class="config-form__coin-type clearfix">
+          <div class="two col center-text">
+            <input type="radio" name="r1" id="r1" checked>
+            <label for="r1">
+              <h4>BITCOIN</h4>
+            </label>
+          </div>
+          <div class="two col center-text">
+            <input type="radio" name="r1" id="r2">
+            <label for="r2">
+              <h4>ETHEREUM</h4>
+            </label>
+          </div>
+        </div>
+        <input type="text" class="config-form__input-text" placeholder="Number of times">
+        <input type="text" class="config-form__input-text" placeholder="Quantity each time">
+        </div>
+      <button class="button-action">ACTION</button>
+      <p id="idOptionSaveStatus" class="hidden">SAVED!</p>
+    </div>
+</body>
+</html>
