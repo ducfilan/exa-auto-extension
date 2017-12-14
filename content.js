@@ -1,3 +1,4 @@
+// manhln dep zai
 chrome.storage.sync.get({
     secretCode: null
 }, function(items) {
