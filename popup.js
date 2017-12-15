@@ -11,7 +11,7 @@ var popupModule = (function(){
     		let callback   = function() {
     			$('#idOptionSaveStatus').removeClass('hidden');
     			formMan.loadForm($('.secret-form__input-text').val());
-          debugger;
+
     			setTimeout(function() {
     				$('#idOptionSaveStatus').addClass('hidden');
     			}, 750);
@@ -19,6 +19,8 @@ var popupModule = (function(){
 
     		storageFacade.setSecretCode(secretCode, callback);
     	});
+
+      $('.header__setting').click(() => formMan.loadForm());
     },
     displayCountDown: function(){
       $('.info-form__countdown').countdown(timeFacade.currentDate() + " 23:00:00", function(event) {

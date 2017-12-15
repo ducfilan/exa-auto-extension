@@ -25,6 +25,12 @@ body {
   padding: 8px;
   color: #fff;
 }
+.header__setting {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  width: 18px;
+}
 .header__title {
   text-align: center;
   text-transform: uppercase;

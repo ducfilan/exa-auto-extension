@@ -2,57 +2,61 @@
 <html>
 
 <head>
-    <title>Auto buy EXA coin</title>
-    <script src="jquery.min.js"></script>
-    <script src="jquery.countdown.min.js"></script>
-    <script src="otpauth.min.js"></script>
+	<title>Auto buy EXA coin</title>
+	<script src="jquery.min.js"></script>
+	<script src="jquery.countdown.min.js"></script>
+	<script src="otpauth.min.js"></script>
 
-    <script src="time-facade.js"></script>
-    <script src="storage-facade.js"></script>
-    <script src="auth-facade.js"></script>
-    <script src="form-man.js"></script>
+	<script src="time-facade.js"></script>
+	<script src="storage-facade.js"></script>
+	<script src="auth-facade.js"></script>
+	<script src="form-man.js"></script>
 
-    <script src="popup.js"></script>
-    <link rel="stylesheet" href="form-styles.css">
-    <link rel="stylesheet" href="popup-styles.css">
+	<script src="popup.js"></script>
+	<link rel="stylesheet" href="form-styles.css">
+	<link rel="stylesheet" href="popup-styles.css">
 </head>
 
 <body>
-    <div class="wrapper">
-      <div class="header">
-        <h3 class="header__title">Exa coin buy helper - © Duc Filan</h3>
-      </div>
+	<div class="wrapper">
+		<div class="header">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAA51BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9aq4iyAAAATHRSTlMAAQIDBAUHCAsMDQ4QERkaGxwfISIjJSovMzY3OTpARklKT1BSVVZeYmN7foCChZGSlJiao6iqsrXAxcfIyszO0dPV3OLo8/X3+fv9QzQ6TQAAANdJREFUGBltwYdSwlAURdGdIASxARbsKCo27AUVFcUSxPP/3+N9L2GGMVmLscpQ5oyMVTkDMvblMSEIMZfyKpgS3tXP6fzMgxJxs7Q7+J3GLCrrFgjelKMBLeX5CPhU6igiXOkr1aDyLG8dp9CTtwcEHZkuibrMVw1nVqZNIpS5wJuTaZMIZa7xjmW6JOoy72WgeC9vDSd8khNvwItShxHh8qtSm+wozzCCnnK0gAVl9QNMZ3ReLd8pMToobj2qhhMUMCfyqpgSE7blTfHfkpxvMqJY5oaxP6/YXKifKob6AAAAAElFTkSuQmCC"
+      class="header__setting">
+			<h3 class="header__title">Exa coin buy helper - © Duc Filan</h3>
+		</div>
 
-      <div class="secret-form">
-        <input type="text" class="secret-form__input-text" placeholder="2-FA secret code">
-        <button class="secret-form__button-set">SET</button>
-      </div>
+		<div class="secret-form">
+			<input type="text" class="secret-form__input-text" placeholder="2-FA secret code">
+			<button class="secret-form__button-set">SET</button>
+		</div>
 
-      <div class="info-form">
-        <h2 class="info-form__countdown info-form__countdown--no-margin"></h2>
-        <h2 class="info-form__2fa-code info-form__2fa-code--no-margin"></h2>
-      </div>
+		<div class="info-form">
+			<h2 class="info-form__countdown info-form__countdown--no-margin"></h2>
+			<h2 class="info-form__2fa-code info-form__2fa-code--no-margin"></h2>
+		</div>
 
-      <div class="config-form">
-        <div class="config-form__coin-type clearfix">
-          <div class="two col center-text">
-            <input type="radio" name="r1" id="r1" checked>
-            <label for="r1">
+		<div class="config-form">
+			<div class="config-form__coin-type clearfix">
+				<div class="two col center-text">
+					<input type="radio" name="r1" id="r1" checked>
+					<label for="r1">
               <h4>BITCOIN</h4>
             </label>
-          </div>
-          <div class="two col center-text">
-            <input type="radio" name="r1" id="r2">
-            <label for="r2">
+				</div>
+				<div class="two col center-text">
+					<input type="radio" name="r1" id="r2">
+					<label for="r2">
               <h4>ETHEREUM</h4>
             </label>
-          </div>
-        </div>
-        <input type="text" class="config-form__input-text" placeholder="Number of times">
-        <input type="text" class="config-form__input-text" placeholder="Quantity each time">
-        </div>
-      <button class="button-action">ACTION</button>
-      <p id="idOptionSaveStatus" class="hidden">SAVED!</p>
-    </div>
+				</div>
+			</div>
+			<input type="text" class="config-form__input-text" placeholder="Number of times">
+			<input type="text" class="config-form__input-text" placeholder="Quantity each time">
+		</div>
+
+		<button class="button-action">ACTION</button>
+		<p id="idOptionSaveStatus" class="hidden">SAVED!</p>
+	</div>
 </body>
+
 </html>
