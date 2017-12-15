@@ -14,6 +14,11 @@ var formMan = (function(){
 				$('.secret-form').removeClass('hidden');
         $('.secret-form__input-text').focus().select();
 			}
-		}
+		},
+    populateSettings: function({coinType, noOfTimes, quantityEach}){
+      $('.config-form__coin-type input[name="coinType"]').val([coinType]);
+      $('.config-form__input-text.no-of-times').val(noOfTimes);
+      $('.config-form__input-text.quantity-each').val(quantityEach);
+    }
   }
 })();

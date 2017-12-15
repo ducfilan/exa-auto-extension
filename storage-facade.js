@@ -1,6 +1,6 @@
 var storageFacade = (function() {
 	return {
-		getSecretCode: function(callback) {
+    getSecretCode: function(callback) {
 			chrome.storage.sync.get({
 				secretCode: null
 			}, function(items) {
@@ -11,6 +11,20 @@ var storageFacade = (function() {
 			chrome.storage.sync.set({
 				secretCode: newVal
 			}, function() {
+				if(callback) callback();
+			});
+		},
+    getSettings: function(callback) {
+			chrome.storage.sync.get({
+				settings: null
+			}, function(items) {
+				if(callback) callback(items.settings);
+			});
+		},
+		setSettings: function(newSettings, callback) {
+			chrome.storage.sync.set({
+        settings: newSettings
+      }, function() {
 				if(callback) callback();
 			});
 		}
