@@ -21,6 +21,15 @@ var popupModule = (function() {
 		$('.header__setting').click(() => formMan.loadForm());
 	};
 
+  var _closePopup = () => window.close();
+
+  var _restartCurrentTab = function(){
+    chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
+      var code = 'window.location.reload();';
+      chrome.tabs.executeScript(arrayOfTabs[0].id, {code: code});
+    });
+  };
+
 	var _actionClickHandler = function() {
 		$('.button-action').click(function() {
 			storageFacade.setSettings({
@@ -28,7 +37,10 @@ var popupModule = (function() {
         noOfTimes: $('.config-form__input-text.no-of-times').val(),
         quantityEach: $('.config-form__input-text.quantity-each').val(),
         actionClicked: true
-      }, () => window.close());
+      }, () => {
+        _closePopup();
+        _restartCurrentTab();
+      });
 		});
 	};
 
