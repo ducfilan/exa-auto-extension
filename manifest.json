@@ -21,7 +21,9 @@
 		"js": [
 			"jquery.min.js",
 			"jquery.countdown.min.js",
+			"react-trigger-change.min.js",
 			"otpauth.min.js",
+			"constants.js",
 			"time-facade.js",
 			"storage-facade.js",
 			"auth-facade.js",

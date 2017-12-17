@@ -3,7 +3,7 @@ storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, actionCli
 
   var i = 0;
   var intervalID = setInterval(function () {
-    if(timeFacade.currentHour() != 21) return;
+    if(timeFacade.currentHour() != constants.buyHour) return;
 
     var coinDOMHandler = coinDOMHandlerFactory.createCoin(coinType);
     coinDOMHandler.setValue({noOfTimes, quantityEach});
@@ -11,5 +11,5 @@ storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, actionCli
     coinDOMHandler.triggerBuy();
 
     if (++i == noOfTimes) window.clearInterval(intervalID);
-  }, 1000);
+  }, constants.countdownEvery_ms);
 });

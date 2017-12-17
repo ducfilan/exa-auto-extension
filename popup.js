@@ -66,7 +66,7 @@ var popupModule = (function() {
 					authFacade.get2FAToken(token => $('.info-form__2fa-code').text(token));
 					_isTokenLoaded = true;
 				}
-			}, 100);
+			}, 1000);
 		}
 	}
 })();

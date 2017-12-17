@@ -4,18 +4,22 @@ class CoinDOMHandler {
 		this._quantityEach = quantityEach;
 	}
 
+  fillReactInput(target, val) {
+    target = target[0];
+  	var event = document.createEvent("HTMLEvents");
+  	target.value = val;
+  	event.initEvent("input", true, true);
+  	target.dispatchEvent(event);
+  }
+
 	fillValue() {}
 	triggerBuy() {}
 }
 
 class BTCDOMHandler extends CoinDOMHandler {
 	fillValue() {
-    $('.crd-icobuy').eq(0).find('.c251.c258').eq(0)
-      .attr('value', this._quantityEach)
-      .val(this._quantityEach);
-    authFacade.get2FAToken(token => $('.crd-icobuy').eq(0).find('.c251.c258').eq(3)
-      .attr('value', token)
-      .val(token));
+    super.fillReactInput($('.crd-icobuy').eq(0).find('.c251.c258').eq(0), this._quantityEach);
+    authFacade.get2FAToken(token => super.fillReactInput($('.crd-icobuy').eq(0).find('.c251.c258').eq(3), token));
 	}
 
   triggerBuy() {
@@ -25,12 +29,9 @@ class BTCDOMHandler extends CoinDOMHandler {
 
 class EthDOMHandler extends CoinDOMHandler {
 	fillValue() {
-    $('.crd-icobuy').eq(1).find('.c251.c258').eq(0)
-      .attr('value', this._quantityEach)
-      .val(this._quantityEach);
-    authFacade.get2FAToken(token => $('.crd-icobuy').eq(1).find('.c251.c258').eq(3)
-      .attr('value', token)
-      .val(token));
+    debugger;
+    super.fillReactInput($('.crd-icobuy').eq(1).find('.c251.c258').eq(0), this._quantityEach);
+    authFacade.get2FAToken(token => super.fillReactInput($('.crd-icobuy').eq(1).find('.c251.c258').eq(3), token));
 	}
 
   triggerBuy() {
