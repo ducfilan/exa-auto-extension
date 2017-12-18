@@ -25,6 +25,10 @@ class BTCDOMHandler extends CoinDOMHandler {
   isBuyButtonEnable() {
     return !$('.crd-icobuy').eq(0).find('.frm-btn button').prop('disabled');
   }
+
+  isError(){
+    return $('.frm-tf p').eq(2).text().includes(constants.failedMessage);
+  }
 }
 
 class EthDOMHandler extends CoinDOMHandler {
@@ -39,6 +43,10 @@ class EthDOMHandler extends CoinDOMHandler {
 
   isBuyButtonEnable() {
     return !$('.crd-icobuy').eq(0).find('.frm-btn button').prop('disabled');
+  }
+
+  isError(){
+    return $('.frm-tf p').eq(7).text().includes(constants.failedMessage);
   }
 }
 

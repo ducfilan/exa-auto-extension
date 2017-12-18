@@ -10,6 +10,6 @@ storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, actionCli
     coinDOMHandler.fillValue();
     coinDOMHandler.triggerBuy();
 
-    if (coinDOMHandler.isBuyButtonEnable() && ++i == noOfTimes) window.clearInterval(intervalID);
+    if (coinDOMHandler.isBuyButtonEnable() && !coinDOMHandler.isError() && ++i == noOfTimes) window.clearInterval(intervalID);
   }, constants.countdownEvery_ms);
 });
