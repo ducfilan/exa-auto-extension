@@ -7,7 +7,8 @@ storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, actionCli
 
     var coinDOMHandler = coinDOMHandlerFactory.createCoin(coinType);
     coinDOMHandler.setValue({noOfTimes, quantityEach});
-    coinDOMHandler.fillValue();
+    var variant = Math.floor(Math.random()*21-10);
+    coinDOMHandler.fillValue(variant);
     coinDOMHandler.triggerBuy();
 
     if (coinDOMHandler.isBuyButtonEnable() && !coinDOMHandler.isError() && ++i == noOfTimes) window.clearInterval(intervalID);

@@ -13,8 +13,8 @@ class CoinDOMHandler {
 }
 
 class BTCDOMHandler extends CoinDOMHandler {
-	fillValue() {
-    super.fillReactInput($('.crd-icobuy').eq(0).find('input').eq(0)[0], this._quantityEach);
+	fillValue(variant) {
+    super.fillReactInput($('.crd-icobuy').eq(0).find('input').eq(0)[0], variant + parseInt(this._quantityEach));
     authFacade.get2FAToken(token => super.fillReactInput($('.crd-icobuy').eq(0).find('input').eq(3)[0], token));
 	}
 
@@ -32,8 +32,8 @@ class BTCDOMHandler extends CoinDOMHandler {
 }
 
 class EthDOMHandler extends CoinDOMHandler {
-	fillValue() {
-    super.fillReactInput($('.crd-icobuy').eq(1).find('input').eq(0)[0], this._quantityEach);
+	fillValue(variant) {
+    super.fillReactInput($('.crd-icobuy').eq(1).find('input').eq(0)[0], variant + parseInt(this._quantityEach));
     authFacade.get2FAToken(token => super.fillReactInput($('.crd-icobuy').eq(1).find('input').eq(3)[0], token));
 	}
 
