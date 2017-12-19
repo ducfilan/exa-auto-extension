@@ -1,4 +1,4 @@
-storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, actionClicked}) {
+storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, variantEach, actionClicked}) {
 	if (!actionClicked) return;
 
   var i = 0;
@@ -6,9 +6,8 @@ storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, actionCli
     if(timeFacade.currentHour() != constants.buyHour) return;
 
     var coinDOMHandler = coinDOMHandlerFactory.createCoin(coinType);
-    coinDOMHandler.setValue({noOfTimes, quantityEach});
-    var variant = Math.floor(Math.random()*21-10);
-    coinDOMHandler.fillValue(variant);
+    coinDOMHandler.setValue({noOfTimes, quantityEach, variantEach});
+    coinDOMHandler.fillValue();
     coinDOMHandler.triggerBuy();
 
     if (coinDOMHandler.isBuyButtonEnable() && !coinDOMHandler.isError() && ++i == noOfTimes) window.clearInterval(intervalID);

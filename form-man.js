@@ -15,10 +15,11 @@ var formMan = (function(){
         $('.secret-form__input-text').focus().select();
 			}
 		},
-    populateSettings: function({coinType, noOfTimes, quantityEach}){
+    populateSettings: function({coinType, noOfTimes, quantityEach, variantEach}){
       $('.config-form__coin-type input[name="coinType"]').val([coinType]);
       $('.config-form__input-text.no-of-times').val(noOfTimes);
       $('.config-form__input-text.quantity-each').val(quantityEach);
+      $('.config-form__input-text.variant-each').val(variantEach);
     }
   }
 })();

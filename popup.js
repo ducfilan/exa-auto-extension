@@ -36,6 +36,7 @@ var popupModule = (function() {
         coinType: $('.config-form__coin-type input[name="coinType"]:checked').val(),
         noOfTimes: $('.config-form__input-text.no-of-times').val(),
         quantityEach: $('.config-form__input-text.quantity-each').val(),
+        variantEach: $('.config-form__input-text.variant-each').val(),
         actionClicked: true
       }, () => {
         _closePopup();
