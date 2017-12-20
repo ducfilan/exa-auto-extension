@@ -3,7 +3,7 @@ storageFacade.getSettings(function({coinType, noOfTimes, quantityEach, variantEa
 
   var i = 0;
   var intervalID = setInterval(function () {
-    if(timeFacade.currentHour() != constants.buyHour) return;
+    if(timeFacade.currentHour() != constants.buyHour || !coinDOMHandler.isBuyButtonEnable()) return;
 
     var coinDOMHandler = coinDOMHandlerFactory.createCoin(coinType);
     coinDOMHandler.setValue({noOfTimes, quantityEach, variantEach});
